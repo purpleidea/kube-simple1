@@ -1,30 +1,29 @@
 {
-  "id": "foo",
-  "kind": "ReplicationController",
-  "apiVersion": "v1beta1",
-  "desiredState": {
-    "replicas": 2,
-    "replicaSelector": {"name": "kube-simple1"},
-    "podTemplate": {
-      "desiredState": {
-        "manifest": {
-          "version": "v1beta1",
-          "id": "kube-simple1",
-          "containers": [{
-            "name": "docker-simple1",
-            "image": "docker-simple1",
-            "ports": [{"containerPort": 8080}]
-          }]
+    "id": "foo",
+    "kind": "ReplicationController",
+		"apiVersion": "v1beta3",
+    "metadata": {
+        "labels": {
+            "name": "kube-simple1"
         }
-      },
-      "labels": {
-        "name": "kube-simple1",
-        "app": "kube-simple1"
-      }
+    },
+    "spec": {
+        "replicas": 2,
+        "selector": {"name": "kube-simple1"},
+        "template": {
+            "metadata": {
+                "labels": {
+                    "name": "kube-simple1",
+                    "app": "kube-simple1"
+                }
+            },
+            "spec" {
+                "containers": [{
+                    "name": "docker-simple1",
+                    "image": "docker-simple1",
+                    "ports": [{"containerPort": 8080}]
+                }]
+            }
+        }
     }
-  },
-  "labels": {
-    "name": "kube-simple1"
-  }
 }
-    
