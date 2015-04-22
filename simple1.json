@@ -17,7 +17,7 @@
                     "app": "kube-simple1"
                 }
             },
-            "spec" {
+            "spec": {
                 "containers": [{
                     "name": "docker-simple1",
                     "image": "docker-simple1",
