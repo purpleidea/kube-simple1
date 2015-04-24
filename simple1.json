@@ -1,5 +1,5 @@
 {
-  "id": "foo",
+  "id": "kube-simple1",
   "kind": "ReplicationController",
   "apiVersion": "v1beta1",
   "desiredState": {
