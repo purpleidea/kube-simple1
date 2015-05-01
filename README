@@ -1,0 +1,25 @@
+This repository contains an example template for a Kubernetes application.
+It is used to demonstrate the power of oh-my-vagrant!
+
+Here are some useful commands.
+
+docker images	# see what images exist
+docker ps	# see what's running
+wget -q <IP>:8000/README -O -	# read output from file
+
+kubectl get minions
+kubectl get replicationControllers
+kubectl get pods
+kubectl get services
+
+vagrant rsync
+vagrant provision --provision-with docker	# build new images on all hosts
+vagrant provision
+
+kubectl create -f <file.json>
+kubectl update -f <file.json>
+kubectl rollingupdate <id> -f <file.json>
+
+Happy hacking!
+James
+
