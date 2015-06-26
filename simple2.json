@@ -1,0 +1,29 @@
+{
+  "id": "kube-simple2",
+  "kind": "ReplicationController",
+  "apiVersion": "v1beta1",
+  "desiredState": {
+    "replicas": 2,
+    "replicaSelector": {"name": "kube-simple2"},
+    "podTemplate": {
+      "desiredState": {
+        "manifest": {
+          "version": "v1beta1",
+          "id": "kube-simple2",
+          "containers": [{
+            "name": "docker-simple1",
+            "image": "docker-simple1",
+            "ports": [{"containerPort": 8080}]
+          }]
+        }
+      },
+      "labels": {
+        "name": "kube-simple2",
+        "app": "kube-simple2"
+      }
+    }
+  },
+  "labels": {
+    "name": "kube-simple2"
+  }
+}

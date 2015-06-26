@@ -14,11 +14,13 @@ kubectl get services
 
 vagrant rsync
 vagrant provision --provision-with docker	# build new images on all hosts
-vagrant provision
 
 kubectl create -f <file.json>
 kubectl update -f <file.json>
 kubectl rollingupdate <id> -f <file.json>
+
+kubectl rollingupdate kube-simple1 -f /vagrant/kubernetes/applications/kube-simple1/simple2.json
+kubectl rollingupdate kube-simple2 -f /vagrant/kubernetes/applications/kube-simple1/simple1.json
 
 Happy hacking!
 James
